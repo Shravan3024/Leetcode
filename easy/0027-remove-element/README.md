@@ -62,23 +62,23 @@ Constraints:
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.8 MB  
-**Submitted:** 2026-06-14T09:39:05.106Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 43.2 MB (beats 89.39%)  
+**Submitted:** 2026-06-14T09:39:13.776Z  
 
 ```java
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        int index = 0;
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] != val){
-                nums[index] = nums[i];
-            }
-        }
-                index++;
-        return index;
-    }
-
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int index = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != val){
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        return index;
+    }
+}
 ```
 
 ---
