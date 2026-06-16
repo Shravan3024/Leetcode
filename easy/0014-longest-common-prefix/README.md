@@ -33,23 +33,31 @@ Constraints:
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.7 MB  
-**Submitted:** 2026-06-16T16:08:49.896Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 43.1 MB (beats 66.97%)  
+**Submitted:** 2026-06-16T16:08:59.809Z  
 
 ```java
-            while(strs[i].indexOf(prefix) != 0){
-                prefix = prefix.substring(0, prefix.length() - 1);//Removes the last character 
-                from the string prefix.
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if(strs == null || strs.length == 0){
+            return "";
+        }
 
-                if(prefix.isEmpty()){
-                    return "";
-                }
-            }
-        }
-    }
-        return prefix;
+        String prefix = strs[0];
 
+        for(int i = 1; i < strs.length; i++){
+            while(strs[i].indexOf(prefix) != 0){
+                prefix = prefix.substring(0, prefix.length() - 1);//Removes the last character from the string prefix.
+
+                if(prefix.isEmpty()){
+                    return "";
+                }
+            }
+        }
+        return prefix;
+    }
+}
 ```
 
 ---
