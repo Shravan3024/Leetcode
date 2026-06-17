@@ -49,17 +49,17 @@ Constraints:
 **Language:** Java  
 **Runtime:** 0 ms  
 **Memory:** 43 MB  
-**Submitted:** 2026-06-17T15:21:55.606Z  
+**Submitted:** 2026-06-17T15:25:25.058Z  
 
 ```java
-class Solution {
-    public int[] plusOne(int[] digits) {
-        for(int i = 0; i < digits.length-1; i++){
-            if(digits[i] == digits.length-1){
-                digits[i]+=1;
-            }
+
+            digits[i] = 0;
         }
-        return digits;
+
+        int[] result = new int[digits.length + 1];
+        result[0] = 1;
+
+        return result;
     }
 }
 
