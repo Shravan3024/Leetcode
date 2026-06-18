@@ -1,46 +1,36 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        
-        int n=nums.length;
+        int first = bound(nums, target, true);
 
-        Map<Integer, List<Integer>> mp= new HashMap<>();
+        if (first == -1) {
+            return new int[]{-1, -1};
+        }
 
-        int ans[]= new int[2];
+        int last = bound(nums, target, false);
 
-        Arrays.fill(ans, -1);
+        return new int[]{first, last};
+    }
 
-        //if(n==1) return new int[]{0,0};
-        if(n==0) return ans;
+    private int bound(int[] nums, int target, boolean first) {
+        int left = 0, right = nums.length - 1;
+        int ans = -1;
 
-        for(int i=0; i<n; i++)
-        {
-            if(!mp.containsKey(nums[i]))
-            {
-                mp.put(nums[i], new ArrayList<Integer>());
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) {
+                ans = mid;
+
+                if (first) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
             }
-
-            List<Integer> samp=mp.get(nums[i]);
-            samp.add(i);
-
-            mp.put(nums[i], samp);
-        }
-
-        if(!mp.containsKey(target))
-        {
-            return ans;
-        }
-
-        List<Integer> demo=mp.get(target);
-
-        if(demo.size()==1)
-        {
-            ans[0]=demo.get(0);
-            ans[1]=demo.get(0);
-        }
-        else if(demo.size()>1)
-        {
-            ans[0]=demo.get(0);
-            ans[1]=demo.get(demo.size()-1);
         }
 
         return ans;
