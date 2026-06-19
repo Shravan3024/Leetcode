@@ -35,13 +35,13 @@ Constraints:
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 42.4 MB  
-**Submitted:** 2026-06-19T15:52:47.229Z  
+**Memory:** 42.7 MB  
+**Submitted:** 2026-06-19T15:51:42.499Z  
 
 ```java
 
         for(int i = 0; i <= gain.length-1; i++){
-            current += gain[i];
+            current += i;
         }
             max = Math.max(max, current);
         return max;
