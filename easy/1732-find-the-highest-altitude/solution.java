@@ -1,6 +1,6 @@
 
-        for(int i = 0; i < gain.length-1; i++){
-            current += i;
+        for(int i = 0; i <= gain.length-1; i++){
+            current += gain[i];
         }
             max = Math.max(max, current);
         return max;
