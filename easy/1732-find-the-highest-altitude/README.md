@@ -34,23 +34,23 @@ Constraints:
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.7 MB  
-**Submitted:** 2026-06-19T15:51:42.499Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 42.8 MB (beats 87.36%)  
+**Submitted:** 2026-06-19T15:52:54.690Z  
 
 ```java
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int current = 0;
+        int max = 0;
 
-        for(int i = 0; i <= gain.length-1; i++){
-            current += i;
-        }
-            max = Math.max(max, current);
-        return max;
-        int max = 0;
-        int current = 0;
-    public int largestAltitude(int[] gain) {
-    }
-class Solution {
-
+        for(int i = 0; i <= gain.length-1; i++){
+            current += gain[i];
+            max = Math.max(max, current);
+        }
+        return max;
+    }
+}
 ```
 
 ---
